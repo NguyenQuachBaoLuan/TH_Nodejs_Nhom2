@@ -1,0 +1,26 @@
+{
+  "name": "th1_nodejs",
+  "version": "1.0.0",
+  "description": "backend Nodejs",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NguyenQuachBaoLuan/TH_Nodejs_Nhom2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NguyenQuachBaoLuan/TH_Nodejs_Nhom2/issues"
+  },
+  "homepage": "https://github.com/NguyenQuachBaoLuan/TH_Nodejs_Nhom2#readme",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "nodemon": "^3.0.1"
+  }
+}
