@@ -1,0 +1,43 @@
+{{!-- <link rel="stylesheet" href="./views/Asset/css/giaodien.css"> --}}
+<div class="container bg-white mb-2">
+        <div class="row pt-2 pb-2">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a class="text-decoration-none" href="#">Trang chủ</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Thêm tin tức</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+<div id="header">
+	<h1>Thêm tài khoản</h1>
+</div>
+<div id="form">
+<div class="fish" id="fish"></div>
+<div class="fish" id="fish2"></div>
+<form id="waterform" method="post" action="/user/insertuser">
+
+<div class="formgroup" id="name-form">
+    <label for="name">Nhập tên tài khoản</label>
+    <input type="text" id="name" name="Acc" />
+</div>
+<div class="formgroup" id="name-form">
+    <label for="name">Nhập mật khẩu</label>
+    <input type="password" id="name" name="Pass" />
+</div>
+<div class="formgroup" id="name-form">
+    <label for="name">Nhập lại mật khẩu</label>
+    <input type="password" id="name" name="Pass1" />
+</div>
+<div class="formgroup" id="name-form">
+    <label for="name">Chọn quyền</label>
+    <select type="text" id="name" name="Access">
+    <option value="0"> Quyền người dùng</option>
+    <option value="1"> Quyền Admin </option>
+                    
+    </select>
+</div>
+<input type="submit" name="them" value="Thêm tài khoản" />
+
+</form>

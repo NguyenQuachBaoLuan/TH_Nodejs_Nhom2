@@ -1,0 +1,47 @@
+<link rel="stylesheet" href="./views/Asset/css/giaodien.css">
+<div class="container bg-white mb-2">
+        <div class="row pt-2 pb-2">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a class="text-decoration-none" href="#">Trang chủ</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Thêm sản phẩm</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+<div id="header">
+	<h1>Thêm sản phẩm</h1>
+</div>
+<div id="form">
+<div class="fish" id="fish"></div>
+<div class="fish" id="fish2"></div>
+
+
+<form action="/create/insert" id="waterform" method="post">
+<div class="formgroup" id="name-form">
+    <label for="name">Chọn danh mục </label>
+    <select type="text" id="name" name="idNhom">
+        {{#each category}}
+            <option value="{{this.idNhom}}">{{this.tenNhom}}</option>
+            {{/each}}
+    </select>
+<div class="formgroup" id="name-form">
+    <label for="name">Nhập tên sản phẩm</label>
+    <input type="text" id="name" name="tenSP" />
+</div>
+<div class="formgroup" id="name-form" >
+    <label for="name"> Chọn hình ảnh</label>
+    <input type="file" id="name" name="hinhSP" style="background-color: aliceblue;"/>
+</div>
+<div class="formgroup" id="name-form">
+    <label for="name">Nhập giá sản phẩm</label>
+    <input type="text" id="name" name="giaSP" />
+</div>
+<div class="formgroup" id="name-form" >
+    <label for="name">Nhập mô tả</label>
+    <textarea type="text" id="name" name="tsSP" id="editor" cols="30" rows="10">
+    </textarea>
+</div>
+<input type="submit" name="them" value="Thêm sản phẩm" />
+
+</form>

@@ -1,0 +1,48 @@
+<div class="container bg-white mb-2">
+        <div class="row pt-2 pb-2">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb m-0">
+                <li class="breadcrumb-item"><a class="text-decoration-none" href="#">Trang chủ</a></li>
+                <li class="breadcrumb-item"><a class="text-decoration-none" href="admin.php?controller=account">Tài khoản</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Sửa Tài khoản</li>
+            </ol>
+        </nav>
+    </div>
+ </div>
+{{#each data}}
+<form action="/user/update/{{this.idAcc}}" method="POST">
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-12">
+                <label for="tsp" class="form-label">Tên tài khoản:</label>
+                <input class="form-control" type="text" name="Acc" value="{{this.Acc}}" aria-label="default input example">
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <label for="ha" class="form-label">Mật khẩu:</label>
+                <input class="form-control" type="text" name="Pass" value="{{this.Pass}}" >
+            </div>
+        </div>
+
+        <div class="row mt-4">
+        <div class="col-md-12">
+            <label  class="form-label">Quyền:</label>
+            <select name="Access" class="form-select"aria-label="default input example">
+                    <option selected>Chọn quyền</option>
+                    <option value="1">Quyền Admin</option>
+                    <option value="0">Quyền người dùng</option>
+            </select>
+        </div>
+        </div>
+        <div class="row mt-4 mb-5">
+            <div class="col text-center">
+                <input type="hidden" name="idAcc" value="{{this.idAcc}}">
+                <button type="submit" name="sua" class="btn text-bg-primary">Cập nhật</button>
+            </div>
+        </div>
+
+    </div>
+</form>
+{{/each}}

@@ -1,0 +1,56 @@
+<div class="container bg-white mb-2">
+        <div class="row pt-2 pb-2">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb m-0">
+                <li class="breadcrumb-item"><a class="text-decoration-none" href="#">Trang chủ</a></li>
+                <li class="breadcrumb-item"><a class="text-decoration-none" href="admin.php?controller=product">Sản phẩm</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Sửa sản phẩm</li>
+            </ol>
+        </nav>
+    </div>
+ </div>
+<form action="/updatesp" method="POST">
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6">
+                <label for="dm" class="form-label">Danh mục:</label>
+                <select name="idNhom" class="form-select"aria-label="default input example">
+                    {{#each category}}
+                        <option value="{{this.idNhom}}">{{this.idNhom}} - {{this.tenNhom}}</option>
+                    {{/each}}                    
+                </select>
+            </div>
+{{#each data}}
+            <div class="col-md-6">
+                <input class="form-control" id="tsp" type="hidden" name="id" value="{{this.idSP}}" aria-label="default input example">
+                <label for="tsp" class="form-label">Tên sản phẩm:</label>
+                <input class="form-control" id="tsp" type="text" name="tenSP" value="{{this.tenSP}}" aria-label="default input example">
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <label for="ha" class="form-label">Hình ảnh:</label>
+                <input class="form-control" id="ha" type="file" name="hinhSP" >
+            </div>
+            <div class="col-md-6">
+                <label for="tk" class="form-label">Giá:</label>
+                <input class="form-control" id="gia" type="text" name="giaSP" value="{{this.giaSP}}" oninput="formatPrice(this) " aria-label="default input example">
+            </div>
+            
+        </div>
+
+        <div class="row mt-4">
+            <label  class="form-label">Mô tả:</label>
+            <div class="col"><textarea name="tsSP" id="editor" cols="30" rows="10" >{{this.tsSP}}</textarea></div>
+        </div>
+
+        <div class="row mt-4 mb-5">
+            <div class="col text-center">
+                <button type="submit" name="sua" class="btn text-bg-primary">Cập nhật</button>
+            </div>
+        </div>
+
+    </div>
+</form>
+{{/each}}

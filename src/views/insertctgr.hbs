@@ -1,0 +1,62 @@
+<link rel="stylesheet" href="./views/Asset/css/giaodien.css">
+
+<div class="container bg-white mb-2">
+        <div class="row pt-2 pb-2">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb m-0">
+                <li class="breadcrumb-item"><a class="text-decoration-none" href="#">Trang chủ</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Thêm danh mục</li>
+            </ol>
+        </nav>
+    </div>
+ </div>
+<div id="header">
+	<h1>Thêm Danh mục</h1>
+</div>
+<div id="form">
+<div class="fish" id="fish"></div>
+<div class="fish" id="fish2"></div>
+
+<form id="waterform" method="post" action="/createctgr/insert">
+
+
+<div class="formgroup" id="name-form">
+    <label for="name">Nhập tên danh mục</label>
+    <input type="text" id="name" name="tenNhom" />
+
+	<input type="submit" name="them" value="Thêm danh mục" />
+</form>
+</div>
+<script>
+    $('document').ready(function(){
+	$('input[type="text"], input[type="email"], textarea').focus(function(){
+		var background = $(this).attr('id');
+		$('#' + background + '-form').addClass('formgroup-active');
+		$('#' + background + '-form').removeClass('formgroup-error');
+	});
+	$('input[type="text"], input[type="email"], textarea').blur(function(){
+		var background = $(this).attr('id');
+		$('#' + background + '-form').removeClass('formgroup-active');
+	});
+
+function errorfield(field){
+	$(field).addClass('formgroup-error');
+	console.log(field);	
+}
+
+$("#waterform").submit(function() {
+	var stopsubmit = false;
+
+if($('#name').val() == "") {
+	errorfield('#name-form');
+	stopsubmit=true;
+}
+if($('#email').val() == "") {
+	errorfield('#email-form');
+	stopsubmit=true;
+}
+  if(stopsubmit) return false;
+});
+		
+});
+</script>
